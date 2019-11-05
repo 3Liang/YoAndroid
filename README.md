@@ -1,2 +1,2 @@
 # YoAndroid
-A Wechat mini-program practice project
+A WeChat mini-program practice project
