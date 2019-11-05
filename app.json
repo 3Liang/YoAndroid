@@ -6,8 +6,6 @@
     "pages/project/project",
     "pages/me/me",
     "pages/login/login",
-    "pages/index/index",
-    "pages/logs/logs",
     "pages/register/register",
     "pages/webview/webview",
     "pages/structure-list/structure-list",
@@ -17,32 +15,42 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WanAndroid",
+    "navigationBarTitleText": "YoAndroid",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "color": "#707070",
-    "selectedColor": "#1296db",
+    "color": "#cdcdcd",
+    "selectedColor": "#2c2c2c",
     "borderStyle": "white",
     "position": "bottom",
     "list": [
       {
+        "iconPath":"images/home-unselect.png",
+        "selectedIconPath":"images/home-select.png",
         "pagePath": "pages/home/home",
         "text": "首页"
       },
       {
+        "iconPath": "images/structure-unselect.png",
+        "selectedIconPath": "images/structure-select.png",
         "pagePath": "pages/structure/structure",
         "text": "体系"
       },
       {
+        "iconPath": "images/public-unselect.png",
+        "selectedIconPath": "images/public-select.png",
         "pagePath": "pages/public/public",
         "text": "公众号"
       },
       {
+        "iconPath": "images/project-unselect.png",
+        "selectedIconPath": "images/project-select.png",
         "pagePath": "pages/project/project",
         "text": "项目"
       },
       {
+        "iconPath": "images/me-unselect.png",
+        "selectedIconPath": "images/me-select.png",
         "pagePath": "pages/me/me",
         "text": "我的"
       }
