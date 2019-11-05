@@ -1,0 +1,9 @@
+<!--pages/structure/structure.wxml-->
+<view class="container">
+  <view wx:for="{{tree}}" wx:key="id" class="item">
+    <text class="parent-text" decode="true">{{item.name}}</text>
+    <view class="item-container">
+      <text wx:for="{{item.children}}" wx:key="id" class="item-item child-text" decode="true" bindtap="onItemClick" data-item="{{item}}">{{item.name}}</text>
+    </view>
+  </view>
+</view>

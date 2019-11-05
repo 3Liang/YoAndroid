@@ -1,0 +1,4 @@
+<!--pages/webview/webview.wxml-->
+<view class="web-container">
+  <text bindtap="copyLink" class="item">{{url}}</text>
+</view>

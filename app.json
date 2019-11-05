@@ -1,9 +1,18 @@
 {
   "pages": [
+    "pages/home/home",
+    "pages/structure/structure",
+    "pages/public/public",
+    "pages/project/project",
+    "pages/me/me",
     "pages/login/login",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/register/register"
+    "pages/register/register",
+    "pages/webview/webview",
+    "pages/structure-list/structure-list",
+    "pages/collection/collection",
+    "pages/points/points"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -11,5 +20,36 @@
     "navigationBarTitleText": "WanAndroid",
     "navigationBarTextStyle": "black"
   },
-  "sitemapLocation": "sitemap.json"
+  "tabBar": {
+    "color": "#707070",
+    "selectedColor": "#1296db",
+    "borderStyle": "white",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/structure/structure",
+        "text": "体系"
+      },
+      {
+        "pagePath": "pages/public/public",
+        "text": "公众号"
+      },
+      {
+        "pagePath": "pages/project/project",
+        "text": "项目"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "timestamp": "../components/timestamp/timestamp"
+  }
 }

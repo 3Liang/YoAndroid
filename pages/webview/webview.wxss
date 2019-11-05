@@ -1,0 +1,15 @@
+/* pages/webview/webview.wxss */
+.web-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.item{
+  margin: 20rpx;
+  word-break: keep-all;
+  word-wrap: break-word;
+}

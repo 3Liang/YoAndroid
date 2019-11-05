@@ -1,6 +1,6 @@
 //app.js
 App({
-  onLaunch: function () {
+  onLaunch: function() {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -32,8 +32,37 @@ App({
         }
       }
     })
+    this.globalData.user = wx.getStorageSync('user')
+    this.globalData.cookie = wx.getStorageSync('cookie')
   },
+
   globalData: {
-    userInfo: null
+    userInfo: null,
+    user: null,
+    cookie: '',
+  },
+
+  isLogin: function() {
+    return this.globalData.user != null && this.globalData.cookie != ''
+  },
+
+  login: function(user, cookie) {
+    this.globalData.user = user
+    this.globalData.cookie = cookie
+    wx.setStorageSync('user', user)
+    wx.setStorageSync('cookie', cookie)
+    wx.reLaunch({
+      url:'../../pages/home/home'
+    })
+  },
+
+  logout: function(){
+    this.globalData.user = null
+    this.globalData.cookie = ''
+    wx.removeStorageSync('user')
+    wx.removeStorageSync('cookie')
+    wx.reLaunch({
+      url:'../../pages/home/home'
+    })
   }
 })

@@ -1,0 +1,96 @@
+/* pages/project/project.wxss */
+
+.scroll-view {
+  white-space: nowrap;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  background-color: #f8f8f8;
+  color: transparent;
+  position: sticky;
+  top: 0;
+}
+
+.tab-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.tab-item {
+  margin-left: 15rpx;
+  margin-right: 15rpx;
+  font-size: 24rpx;
+  color: #aeaeae;
+}
+
+.selected-tab-item {
+  margin-left: 15rpx;
+  margin-right: 15rpx;
+  font-size: 30rpx;
+  color: #4c4c4e;
+}
+
+.item {
+  padding: 20rpx;
+}
+
+.item-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.item-image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.item-text {
+  margin-top: 16rpx;
+  margin-bottom: 16rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.author-text {
+  color: #8a8a8a;
+  font-size: 24rpx;
+}
+
+.chapter-text {
+  color: #cdcdcd;
+  font-size: 24rpx;
+}
+
+.title-text {
+  color: #4c4c4e;
+  font-size: 28rpx;
+}
+
+.time-text {
+  color: #8a8a8a;
+  font-size: 24rpx;
+}
+
+.line {
+  background: #f6f6f6;
+  width: 100%;
+  height: 10rpx;
+}
+
+.item-hover {
+  background: #f6f6f6;
+}
+
+.item-left {
+  width: 200rpx;
+  height: 100rpx;
+}
+
+.item-right {
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  width: 80rpx;
+  flex-grow: 2;
+  justify-content: center;
+}

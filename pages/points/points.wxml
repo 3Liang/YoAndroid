@@ -1,0 +1,14 @@
+<!--pages/points/points.wxml-->
+<view class="container">
+  <text class="me">我:</text>
+  <text class="gap font">{{selfPoints.rank+"."}}</text>
+  <text class="gap font">{{selfPoints.username+","}}</text>
+  <text class="gap font">{{"积分:"+selfPoints.coinCount}}</text>
+  <text class="gap level">{{"lv"+selfPoints.level}}</text>
+</view>
+<view wx:for="{{ranks}}" wx:key="{{userId}}" class="container">
+  <text class="font">{{item.rank+"."}}</text>
+  <text class="gap font">{{item.username+","}}</text>
+  <text class="gap font">{{"积分:"+item.coinCount}}</text>
+  <text class="gap level">{{"lv"+item.level}}</text>
+</view>

@@ -1,0 +1,2 @@
+<!--components/timestamp/timestamp.wxml-->
+<text class="external-class">{{time}}</text>

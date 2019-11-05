@@ -1,60 +1,16 @@
 // pages/login/login.js
+const util = require("../../utils/util.js")
+const api = require('../../utils/api.js')
+const http = require('../../utils/http.js')
+const result = require('../../utils/http-result.js')
+const dialog = require('../../utils/dialog.js')
+var username = "";
+var password = "";
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-    username: "",
-    password: ""
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function(options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function() {
 
   },
 
@@ -66,23 +22,45 @@ Page({
   },
 
   inputUsername: function(e) {
-    this.username = e.detail.value;
-    wx.showToast({
-      title: this.username,
-    })
+    username = e.detail.value;
   },
 
   inputPassword: function(e) {
-    this.password = e.detail.value;
-    wx.showToast({
-      title: this.password,
-    })
+    password = e.detail.value;
   },
 
   login: function() {
-    wx.showToast({
-      title: 'Login',
-    })
+    if (util.isEmptyString(username)) {
+      wx.showToast({
+        title: '用户名不能为空',
+      })
+    } else if (util.isEmptyString(password)) {
+      wx.showToast({
+        title: '密码不能为空',
+      })
+    } else {
+      http.headerPost(
+        api.loginUrl, {
+          'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+        }, {
+          "username": username,
+          "password": password
+        },
+        function(res) {
+          if (result.isSuccess(res)) {
+            wx.showToast({
+              title: '登录成功!',
+              duration: 1500
+            })
+            setTimeout(function() {
+              getApp().login(res.data.data, res.cookies)
+            }, 1500)
+          } else {
+            dialog.showMessage('', result.errorMessage(res), 'OK')
+          }
+        }
+      )
+    }
   },
 
   register: function() {

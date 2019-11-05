@@ -1,0 +1,26 @@
+<!--pages/public/public.wxml-->
+<scroll-view scroll-x class="scroll-view">
+  <view class="tab-contaner">
+    <block wx:for="{{authors}}" wx:key="id">
+      <text wx:if="{{item.name!=seletedItem.name}}" class="tab-item" bindtap="selectTab" data-item="{{item}}">{{item.name}}</text>
+      <text wx:else class="selected-tab-item" bindtap="selectTab" data-item="{{item}}">{{item.name}}</text>
+    </block>
+  </view>
+</scroll-view>
+<view wx:for="{{articles}}" wx:key="id">
+  <view class="item" hover-class="item-hover" bindtap="onArticleItemClick" data-item="{{item}}">
+    <view class="item-item">
+      <text class="author-text">{{item.author==''?"分享人: "+item.shareUser:"作者: "+item.author}}</text>
+      <timestamp external-class="time-text" timestamp="{{item.publishTime}}" />
+    </view>
+    <view class="item-text">
+      <text class="title-text" decode="true">{{item.title}}</text>
+    </view>
+    <view class="item-item">
+      <text class="chapter-text">{{item.superChapterName+'/'+item.chapterName}}</text>
+      <image wx:if="{{item.collect}}" src="../../images/like.png" mode="aspectFill" class="item-image" catchtap="uncollectArticle" data-item="{{item}}" />
+      <image wx:else src="../../images/unlike.png" mode="aspectFill" class="item-image" catchtap="collectArticle" data-item="{{item}}" />
+    </view>
+  </view>
+  <view class="line" />
+</view>

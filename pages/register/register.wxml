@@ -4,10 +4,10 @@
   <input class="input" bindinput="inputUsername" />
   <view class="line" />
   <text class="title">密码</text>
-  <input class="input" bindinput="inputPassword" />
+  <input class="input" password="true" bindinput="inputPassword" />
   <view class="line" />
   <text class="title">确认密码</text>
-  <input class="input" bindinput="inputConfirmPassword" />
+  <input class="input" password="true" bindinput="inputConfirmPassword" />
   <view class="line" />
   <view class="btnContainer">
     <button bindtap="register">注册</button>

@@ -1,0 +1,21 @@
+<!--pages/me/me.wxml-->
+<view class="container">
+  <view class="line" />
+  <view class="top">
+    <image src="../../images/head.png" class="head" />
+    <text class="username">{{user.username}}</text>
+  </view>
+  <view class="line" />
+  <view hover-class="hover" class="item" bindtap="viewPoints">
+    <text>积分</text>
+  </view>
+  <view class="line" />
+  <view hover-class="hover" class="item" bindtap="viewCollections">
+    <text>收藏</text>
+  </view>
+  <view class="line" />
+  <view hover-class="hover" class="logout" bindtap="logout">
+    <text>退出登录</text>
+  </view>
+  <view class="line" />
+</view>
